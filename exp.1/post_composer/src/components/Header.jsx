@@ -1,0 +1,2 @@
+import {Icon} from './Icons';
+export default function Header({title,onMenu,search,setSearch}){return <header className="topbar"><button className="menu-button" onClick={onMenu}><Icon name="menu"/></button><div><p>Content workspace</p><h1>{title}</h1></div>{setSearch&&<label className="global-search"><Icon name="search" size={17}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search drafts…"/></label>}<button className="help">?</button></header>}
