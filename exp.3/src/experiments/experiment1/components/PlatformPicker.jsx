@@ -1,0 +1,2 @@
+import {PLATFORMS} from '../data';
+export default function PlatformPicker({selected,onChange}){const toggle=id=>onChange(selected.includes(id)?selected.filter(x=>x!==id):[...selected,id]);return <div className="platform-grid">{Object.entries(PLATFORMS).map(([id,p])=><button key={id} type="button" className={selected.includes(id)?'selected':''} style={{'--brand':p.color}} onClick={()=>toggle(id)}><span>{p.icon}</span><div><b>{p.name}</b><small>{p.limit.toLocaleString()} chars</small></div><i>{selected.includes(id)?'✓':''}</i></button>)}</div>}
